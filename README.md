@@ -9,7 +9,7 @@ To use the proxy, add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-meterproxy = "0.1.0"
+meterproxy = "0.1.1"
 ```
 
 ## Example Meter Proxy Usage

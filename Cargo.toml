@@ -1,0 +1,35 @@
+[package]
+name = "meterproxy"
+version = "0.1.1"
+authors = ["gmazzeo <mazzeo.gio@gmail.com>"]
+
+# A short blurb about the package. This is not rendered in any format when
+# uploaded to crates.io (aka this is not markdown).
+description = "A proxy that measures latency and throughput of a client-server application"
+
+repository = "https://github.com/dzobbe/rust-proxy"
+
+
+
+# This points to a file in the repository (relative to this `Cargo.toml`). The
+# contents of this file are stored and indexed in the registry.
+readme = "README.md"
+
+# This is a small list of keywords used to categorize and search for this
+# package.
+keywords = ["proxy", "forwarder"]
+
+
+# If a project is using a nonstandard license, then this key may be specified in
+# lieu of the above key and must point to a file relative to this manifest
+# (similar to the readme key).
+license = "MIT"
+
+
+[dependencies]
+time = "0.1.35"
+docopt = "0.6"
+rustc-serialize = "0.3" 
+libc = "0.2.0"
+lazy_static = "0.1.0"
+ansi_term = "0.9"
