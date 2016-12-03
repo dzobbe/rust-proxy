@@ -48,5 +48,7 @@ fn main() {
 ```
 
 
+## License
 
+MIT © [Giovanni Mazzeo](https://github.com/dzobbe)
 
