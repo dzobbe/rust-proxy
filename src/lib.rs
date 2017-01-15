@@ -8,11 +8,10 @@
 /// option. This file may not be copied, modified, or distributed
 /// except according to those terms.
 /// ///////////////////////////////////////////////////////////////////////////
-
 #[macro_use]
 extern crate lazy_static;
 extern crate libc;
 extern crate time;
 extern crate ansi_term;
 
-pub mod MeterProxy;
+pub mod proxy;

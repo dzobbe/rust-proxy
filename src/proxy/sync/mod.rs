@@ -87,6 +87,7 @@ impl SharedTimeVec {
 lazy_static! {
     static ref TIME_TABLE: SharedTimeVec   = {SharedTimeVec::new()};
     static ref NUM_BYTES : SharedCounter   = {SharedCounter::new()};
+
     static ref ERROR: Arc<Mutex<bool>>	   = Arc::new(Mutex::new(false));
 }
 
@@ -95,7 +96,7 @@ lazy_static! {
 
 
 #[derive(Clone)]
-pub struct MeterProxy {
+pub struct SyncMeterProxy {
 	pub back_address : String,
 	pub back_port    : u16,
 	pub front_address: String,
@@ -104,10 +105,10 @@ pub struct MeterProxy {
 }
 
 
-impl  MeterProxy {
+impl  SyncMeterProxy {
 	
-    pub fn new(b_addr: String, b_port: u16, f_addr: String, f_port: u16) -> MeterProxy {
-        MeterProxy {
+    pub fn new(b_addr: String, b_port: u16, f_addr: String, f_port: u16) -> SyncMeterProxy {
+        SyncMeterProxy {
 			back_address : b_addr,
 			back_port    : b_port,
 			front_address: f_addr,
@@ -276,7 +277,7 @@ impl  MeterProxy {
 	            }
 	            Ok(r) => r,
 	        };
-	
+	 
 	
 	        let mut start_time = time_mutex.lock().unwrap();
 	        *start_time=time::precise_time_ns();

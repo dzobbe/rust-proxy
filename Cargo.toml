@@ -1,11 +1,11 @@
 [package]
-name = "meterproxy"
-version = "0.1.1"
+name = "meter_proxy"
+version = "0.2.0"
 authors = ["gmazzeo <mazzeo.gio@gmail.com>"]
 
 # A short blurb about the package. This is not rendered in any format when
 # uploaded to crates.io (aka this is not markdown).
-description = "A proxy that measures latency and throughput of a client-server application"
+description = "A TCP proxy that measures latency and throughput of a client-server application"
 
 repository = "https://github.com/dzobbe/rust-proxy"
 
