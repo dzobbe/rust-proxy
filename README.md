@@ -9,20 +9,20 @@ To use the proxy, add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-meterproxy = "0.1.1"
+meter_proxy = "0.2.1"
 ```
 
 ## Example Meter Proxy Usage
 
 ```rust
-extern crate meterproxy;
-use meterproxy::MeterProxy;
+extern crate meter_proxy;
+use meter_proxy::proxy::sync::SyncMeterProxy;
 use std::thread;
 use std::time::Duration;
 
 fn main() {
     println!("Starting Proxy");
-    let meter_proxy=MeterProxy::MeterProxy::new("127.0.0.1".to_string(), 12347,"127.0.0.1".to_string(),12349); 
+    let meter_proxy=SyncMeterProxy::new("127.0.0.1".to_string(), 12347,"127.0.0.1".to_string(),12349); 
 
     let meter_proxy_c=meter_proxy.clone();
     let child_proxy = thread::spawn(move || {
