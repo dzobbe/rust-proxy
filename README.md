@@ -1,5 +1,5 @@
 # rust-proxy [![Crates.io](https://img.shields.io/crates/v/meterproxy.svg)](https://crates.io/crates/meterproxy)
-This is a meter proxy implemented in Rust, which interposes between a client and a server and measures the latency and the throughput. An asychronous version will come soon.
+This is a TCP meter proxy implemented in Rust, which interposes between a client and a server and measures the latency and the throughput. Two versions are provided: synchronous and asynchronous. Further checks and tests need to be done. Suggestions are welcome ;)
 
 ## Requirements
 Of course, you will need Rust installed. If you haven't already, get it here: [rust-lang.org](https://www.rust-lang.org). Also you need [Cargo](https://crates.io) to easily compile. The rustc compiler version required is the 1.15.0-nightly.
