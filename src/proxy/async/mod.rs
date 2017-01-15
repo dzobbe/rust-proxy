@@ -133,7 +133,7 @@ impl AsyncMeterProxy {
         return *n_bytes as f64 / 1024.0f64;
     }
 
-    pub fn get_num_resp(&self) -> f64 {
+    pub fn get_latency(&self) -> f64 {
         let n_resp = self.num_resp.lock().unwrap();
         return *n_resp as f64 / 1000000.0f64;
     }

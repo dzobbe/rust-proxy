@@ -1,6 +1,6 @@
-extern crate meterproxy;
+extern crate meter_proxy;
 
-use meterproxy::proxy::async::AsyncMeterProxy;
+use meter_proxy::proxy::async::AsyncMeterProxy;
 use std::thread;
 use std::time::Duration;
 
@@ -25,12 +25,12 @@ fn main() {
         thread::sleep(Duration::from_millis(sleep_time));
 
         println!("The measured latency 'till now: {:.3} ms",
-                 meter_proxy.get_latency_ms());
+                 meter_proxy.get_latency());
         println!("The measured throughput 'till now: {:.3}",
-                 meter_proxy.get_num_bytes_rcvd() as f64 / (n * sleep_time) as f64);
+                 meter_proxy.get_num_kbytes_rcvd() as f64 / (n * sleep_time) as f64);
     }
 
-    meter_proxy.stop_and_reset();
+    meter_proxy.reset();
     let _ = child_proxy.join();
 
 }

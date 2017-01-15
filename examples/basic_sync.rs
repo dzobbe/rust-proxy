@@ -1,6 +1,6 @@
-extern crate meterproxy;
+extern crate meter_proxy;
 
-use meterproxy::proxy::sync::SyncMeterProxy;
+use meter_proxy::proxy::sync::SyncMeterProxy;
 use std::thread;
 use std::time::Duration;
 

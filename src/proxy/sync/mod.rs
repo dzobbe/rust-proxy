@@ -157,7 +157,7 @@ impl  SyncMeterProxy {
 	                    stream_c2.set_read_timeout(Some(Duration::new(3, 0)));
 	
 						//Start a pipe for every connection coming from the client
-	                    MeterProxy::start_pipe(stream_c, back_addr_c, back_port_c);
+	                    SyncMeterProxy::start_pipe(stream_c, back_addr_c, back_port_c);
 	                    drop(stream);
 	
 	                }));
@@ -234,11 +234,11 @@ impl  SyncMeterProxy {
 	       
 	         
 	    thread::spawn(move || {
-	        MeterProxy::keep_copying_bench_2_targ(front, back, timedOut, latency_mutex, tx);
+	        SyncMeterProxy::keep_copying_bench_2_targ(front, back, timedOut, latency_mutex, tx);
 	    });
 	
 	    thread::spawn(move || {
-	        MeterProxy::keep_copying_targ_2_bench(back_c, front_c, timedOut_c, latency_mutex_c, rx);
+	        SyncMeterProxy::keep_copying_targ_2_bench(back_c, front_c, timedOut_c, latency_mutex_c, rx);
 	    });
 	
 	

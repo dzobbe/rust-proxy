@@ -13,5 +13,10 @@ extern crate lazy_static;
 extern crate libc;
 extern crate time;
 extern crate ansi_term;
+#[macro_use]
+extern crate futures;
+#[macro_use]
+extern crate tokio_core;
+extern crate futures_cpupool;
 
 pub mod proxy;
